@@ -1,0 +1,213 @@
+:root {
+    /* PALETA 1 cores base */
+    --p1-color-light-beige:    #F2CEAB;
+    --p1-color-dark-teal:      #13505B;
+    --p1-color-warm-yellow:    #F9D478;
+    --p1-color-turquoise:      #118d8d;
+    --p1-color-coral:          #FF6F61;
+    --p1-color-dark-purple:    #72B5A4;
+  
+    /* PALETA 2 cores base */
+    --p2-color-deep-black:    #0a0000;
+    --p2-color-dark-wine:     #34232a;
+    --p2-color-mid-wine:      #614051;
+    --p2-color-muted-mauve:   #967284;
+    --p2-color-light-rose:    #cfa8bb;
+  
+    /* PALETA 3 cores base */
+    --p3-color-charcoal-dark:  #2D2926;
+    --p3-color-steel-gray:     #e0e0e0;
+    --p3-color-golden-brown:   #B88B50;
+    --p3-color-light-steel:    #CCD6E0;
+    --p3-color-light-beige:    #DCC397;
+  
+    /* PALETA 4 cores base */
+    --p4-color-dark-brown:         #3B2311;
+    --p4-color-burnt-gold:         #DEAC4F;
+    --p4-color-medium-brown:       #A36F50;
+    --p4-color-pale-yellow:        #FFF9B1;
+    --p4-color-grayish-brown:      #7E6A58;
+    --p4-color-rich-black:         #0F0C08;
+    --p4-color-dark-gray:          #6A5E57;
+    --p4-color-vibrant-orange:     #CC4A10;
+    --p4-color-olive-beige:        #B8A568;
+    --p4-color-soft-sand:          #B69A8C;
+  }
+  
+  /* 2) Mapear cada paleta em variáveis semânticas */
+  
+  /* Paleta 1 */
+  [data-theme="paleta1"] {
+    --body-bg:          var(--p1-color-light-beige);
+    --header-bg:        var(--p1-color-dark-teal);
+    --header-text:      var(--p1-color-dark-teal);
+    --nav-bg:           var(--p1-color-turquoise);
+    --main-bg:          var(--p1-color-coral);
+    --card-bg:          var(--p1-color-light-beige);
+    --card-top-bg:      var(--p1-color-dark-purple);
+    --text:             var(--p1-color-dark-teal);
+    --accent-primary:   var(--p1-color-turquoise);
+    --accent-secondary: var(--p1-color-dark-purple);
+    --highlight:        var(--p1-color-warm-yellow);
+    --error:            var(--p1-color-coral);
+  }
+  
+  /* Paleta 2 */
+  [data-theme="paleta2"] {
+    --body-bg:          var(--p2-color-light-rose);
+    --header-bg:        var(--p2-color-deep-black);
+    --header-text:      var(--p2-color-muted-mauve);
+    --nav-bg:           var(--p2-color-mid-wine);
+    --main-bg:          var(--p2-color-dark-wine);
+    --card-bg:          var(--p2-color-light-rose);
+    --card-top-bg:      var(--p2-color-mid-wine);
+    --text:             var(--p2-color-deep-black);
+    --accent-primary:   var(--p2-color-muted-mauve);
+    --accent-secondary: var(--p2-color-dark-wine);
+    --highlight:        var(--p2-color-light-rose);
+    --error:            var(--p2-color-mid-wine);
+  }
+  
+  /* Paleta 3 */
+  [data-theme="paleta3"] {
+    --body-bg:          var(--p3-color-light-beige);
+    --header-bg:        var(--p3-color-charcoal-dark);
+    --header-text:      var(--p3-color-golden-brown);
+    --nav-bg:           var(--p3-color-steel-gray);
+    --main-bg:          var(--p3-color-golden-brown);
+    --card-bg:          var(--p3-color-light-steel);
+    --card-top-bg:      var(--p3-color-charcoal-dark);
+    --text:             var(--p3-color-charcoal-dark);
+    --accent-primary:   var(--p3-color-golden-brown);
+    --accent-secondary: var(--p3-color-steel-gray);
+    --highlight:        var(--p3-color-light-beige);
+    --error:            var(--p3-color-golden-brown);
+  }
+  
+  /* Paleta 4 */
+  [data-theme="paleta4"] {
+    --body-bg:          var(--p4-color-soft-sand);
+    --header-bg:        var(--p4-color-rich-black);
+    --header-text:      var(--p4-color-burnt-gold);
+    --nav-bg:           var(--p4-color-olive-beige);
+    --main-bg:          var(--p4-color-medium-brown);
+    --card-bg:          var(--p4-color-soft-sand);
+    --card-top-bg:      var(--p4-color-dark-brown);
+    --text:             var(--p4-color-rich-black);
+    --accent-primary:   var(--p4-color-vibrant-orange);
+    --accent-secondary: var(--p4-color-grayish-brown);
+    --highlight:        var(--p4-color-pale-yellow);
+    --error:            var(--p4-color-burnt-gold);
+  }
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--body-bg);
+  color: var(--text);
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.tela-login {
+  background: rgba(0,0,0,0.8);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+  border-radius: 20px;
+  color: #fff;
+  width: 300px;
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 6px 0;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: var(--card-bg);
+  color: var(--text);
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  margin-top: 10px;
+  cursor: pointer;
+  background-color: var(--accent-primary);
+  color: #fff;
+}
+
+button:hover {
+  background-color: var(--accent-secondary);
+}
+
+.btn-login {
+  background: var(--accent-primary);
+  color: #fff;
+}
+
+.btn-login:hover {
+  background: var(--accent-secondary);
+}
+
+.link {
+  color: var(--highlight);
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 80;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background: var(--card-bg);
+  margin: 10% auto;
+  padding: 40px;
+  border-radius: 20px;
+  width: 300px;
+  color: var(--text);
+  text-align: center;
+  position: relative;
+}
+
+.error {
+  color: var(--error);
+  font-size: 14px;
+}
+
+.success {
+  color: limegreen;
+  font-size: 14px;
+}
+
+.teste {
+  background: var(--card-bg);
+  margin: 10% auto;
+  padding: 40px;
+  margin-left: 42%;
+  border-radius: 20px;
+  width: 300px;
+  color: var(--text);
+  text-align: center;
+  position: absolute;
+}

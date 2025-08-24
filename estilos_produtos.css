@@ -1,0 +1,286 @@
+/* ──────────── estilos.css ──────────── */
+
+:root {
+    /* PALETA 1 cores base */
+    --p1-color-light-beige:    #F2CEAB;
+    --p1-color-dark-teal:      #13505B;
+    --p1-color-warm-yellow:    #F9D478;
+    --p1-color-turquoise:      #118d8d;
+    --p1-color-coral:          #FF6F61;
+    --p1-color-dark-purple:    #72B5A4;
+  
+    /* PALETA 2 cores base */
+    --p2-color-deep-black:    #0a0000;
+    --p2-color-dark-wine:     #34232a;
+    --p2-color-mid-wine:      #614051;
+    --p2-color-muted-mauve:   #967284;
+    --p2-color-light-rose:    #cfa8bb;
+  
+    /* PALETA 3 cores base */
+    --p3-color-charcoal-dark:  #2D2926;
+    --p3-color-steel-gray:     #e0e0e0;
+    --p3-color-golden-brown:   #B88B50;
+    --p3-color-light-steel:    #CCD6E0;
+    --p3-color-light-beige:    #DCC397;
+  
+    /* PALETA 4 cores base */
+    --p4-color-dark-brown:         #3B2311;
+    --p4-color-burnt-gold:         #DEAC4F;
+    --p4-color-medium-brown:       #A36F50;
+    --p4-color-pale-yellow:        #FFF9B1;
+    --p4-color-grayish-brown:      #7E6A58;
+    --p4-color-rich-black:         #0F0C08;
+    --p4-color-dark-gray:          #6A5E57;
+    --p4-color-vibrant-orange:     #CC4A10;
+    --p4-color-olive-beige:        #B8A568;
+    --p4-color-soft-sand:          #B69A8C;
+  }
+  
+  /* 2) Mapear cada paleta em variáveis semânticas */
+  
+  /* Paleta 1 */
+  [data-theme="paleta1"] {
+    --body-bg:          var(--p1-color-light-beige);
+    --header-bg:        var(--p1-color-dark-teal);
+    --header-text:      var(--p1-color-dark-teal);
+    --nav-bg:           var(--p1-color-turquoise);
+    --main-bg:          var(--p1-color-coral);
+    --card-bg:          var(--p1-color-light-beige);
+    --card-top-bg:      var(--p1-color-dark-purple);
+    --text:             var(--p1-color-dark-teal);
+    --accent-primary:   var(--p1-color-turquoise);
+    --accent-secondary: var(--p1-color-dark-purple);
+    --highlight:        var(--p1-color-warm-yellow);
+    --error:            var(--p1-color-coral);
+  }
+  
+  /* Paleta 2 */
+  [data-theme="paleta2"] {
+    --body-bg:          var(--p2-color-light-rose);
+    --header-bg:        var(--p2-color-deep-black);
+    --header-text:      var(--p2-color-muted-mauve);
+    --nav-bg:           var(--p2-color-mid-wine);
+    --main-bg:          var(--p2-color-dark-wine);
+    --card-bg:          var(--p2-color-light-rose);
+    --card-top-bg:      var(--p2-color-mid-wine);
+    --text:             var(--p2-color-deep-black);
+    --accent-primary:   var(--p2-color-muted-mauve);
+    --accent-secondary: var(--p2-color-dark-wine);
+    --highlight:        var(--p2-color-light-rose);
+    --error:            var(--p2-color-mid-wine);
+  }
+  
+  /* Paleta 3 */
+  [data-theme="paleta3"] {
+    --body-bg:          var(--p3-color-light-beige);
+    --header-bg:        var(--p3-color-charcoal-dark);
+    --header-text:      var(--p3-color-golden-brown);
+    --nav-bg:           var(--p3-color-steel-gray);
+    --main-bg:          var(--p3-color-golden-brown);
+    --card-bg:          var(--p3-color-light-steel);
+    --card-top-bg:      var(--p3-color-charcoal-dark);
+    --text:             var(--p3-color-charcoal-dark);
+    --accent-primary:   var(--p3-color-golden-brown);
+    --accent-secondary: var(--p3-color-steel-gray);
+    --highlight:        var(--p3-color-light-beige);
+    --error:            var(--p3-color-golden-brown);
+  }
+  
+  /* Paleta 4 */
+  [data-theme="paleta4"] {
+    --body-bg:          var(--p4-color-soft-sand);
+    --header-bg:        var(--p4-color-rich-black);
+    --header-text:      var(--p4-color-burnt-gold);
+    --nav-bg:           var(--p4-color-olive-beige);
+    --main-bg:          var(--p4-color-medium-brown);
+    --card-bg:          var(--p4-color-soft-sand);
+    --card-top-bg:      var(--p4-color-dark-brown);
+    --text:             var(--p4-color-rich-black);
+    --accent-primary:   var(--p4-color-vibrant-orange);
+    --accent-secondary: var(--p4-color-grayish-brown);
+    --highlight:        var(--p4-color-pale-yellow);
+    --error:            var(--p4-color-burnt-gold);
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Verdana;
+    background: var(--body-bg);
+    color: var(--text);
+}
+header {
+    background: var(--header-bg);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    position: relative;
+}
+header h1 {
+    margin: 0;
+    color: var(--header-text);
+}
+header a {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--highlight);
+    color: var(--header-text);
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+.add-item {
+    background: var(--accent-primary);
+    color: var(--highlight);
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+.item-card {
+    background: var(--card-bg);
+    border: 1px solid var(--accent-secondary);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.item-card .carousel {
+    position: relative;
+    width: 100%;
+    padding-top: 75%;
+    overflow: hidden;
+}
+.item-card .carousel img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.item-card .carousel img.active {
+    opacity: 1;
+}
+.item-card .content {
+    padding: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.item-card .nome-item {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text);
+    margin-bottom: 6px;
+}
+.item-card .categoria {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--header-bg);
+    margin-bottom: 6px;
+}
+.item-card .descricao {
+    font-size: 0.85rem;
+    color: var(--text);
+    margin-bottom: 8px;
+    flex-grow: 1;
+}
+.item-card .quantidade {
+    font-size: 0.85rem;
+    color: var(--text);
+    margin-bottom: 6px;
+}
+.item-card .actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background: var(--card-top-bg);
+    border-top: 1px solid var(--accent-secondary);
+}
+.item-card .actions a {
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: var(--header-text);
+    font-size: 0.85rem;
+}
+.item-card .actions a.edit {
+    background: var(--body-bg);
+}
+.item-card .actions a.delete {
+    background: var(--body-bg);
+}
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal-content {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+}
+.modal-content h2 {
+    margin-top: 0;
+    color: var(--accent-primary);
+}
+.modal-content label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: var(--text);
+}
+.modal-content input[type="text"],
+.modal-content input[type="number"],
+.modal-content select,
+.modal-content textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0;
+    border: 1px solid var(--accent-secondary);
+    border-radius: 4px;
+    font-size: 1rem;
+    color: var(--text);
+}
+.modal-content button {
+    background: var(--highlight);
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--error);
+}
