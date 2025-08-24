@@ -1,0 +1,2 @@
+# trocaki
+projeto senai
