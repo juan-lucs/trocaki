@@ -161,4 +161,17 @@ CREATE TABLE IF NOT EXISTS `usuario_temas` (
 
 ALTER TABLE mensagens ADD COLUMN oculto_para JSON DEFAULT NULL;
 
-SELECT * FROM `video`;
+CREATE TABLE IF NOT EXISTS `mensagens_exclusoes` (
+  `id`           INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  `mensagem_id`  INT UNSIGNED NOT NULL,
+  `usuario_id`   INT UNSIGNED NOT NULL,
+  `data_exclusao` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+  FOREIGN KEY (`mensagem_id`) REFERENCES `mensagens`(`id`) ON DELETE CASCADE,
+  FOREIGN KEY (`usuario_id`)  REFERENCES `usuarios`(`id`)  ON DELETE CASCADE,
+
+  INDEX (`mensagem_id`),
+  INDEX (`usuario_id`)
+) ENGINE=InnoDB
+  DEFAULT CHARSET=utf8mb4
+  COLLATE=utf8mb4_unicode_ci;
