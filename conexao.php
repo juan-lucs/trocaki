@@ -5,7 +5,7 @@ $host     = '127.0.0.1';
 $usuario  = 'root';
 $senha    = '';          
 $database = 'sistema';
-$porta    =3307;
+$porta    =3406;
 
 $mysqli = new mysqli($host, $usuario, $senha, $database, $porta);
 
