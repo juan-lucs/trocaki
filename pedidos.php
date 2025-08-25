@@ -56,7 +56,7 @@ if (isset($_GET['aceitar'])) {
     }
     $stmtFetch->close();
 
-    header('Location: minhas_trocas.php');
+    header('Location: pedidos.php');
     exit;
 }
 
@@ -73,7 +73,7 @@ if (isset($_GET['recusar'])) {
     $stmt->execute();
     $stmt->close();
 
-    header('Location: minhas_trocas.php');
+    header('Location: pedidos.php');
     exit;
 }
 
@@ -90,7 +90,7 @@ if (isset($_GET['excluir'])) {
     $stmt->execute();
     $stmt->close();
 
-    header('Location: minhas_trocas.php');
+    header('Location: pedidos.php');
     exit;
 }
 
